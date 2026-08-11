@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+ve*v/
+env/
+
+# Environment*files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Generated caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node dependencies if generated project has npm
+generated_project/**/node_modules/
+
+

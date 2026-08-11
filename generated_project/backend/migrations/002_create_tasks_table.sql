@@ -1,0 +1,14 @@
+CREATE TYPE task_status AS ENUM ('TODO', 'IN_PROGRESS', 'DONE');
+
+CREATE TABLE IF NOT EXISTS tasks (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  status task_status DEFAULT 'TODO' NOT NULL,
+  due_date TIMESTAMP,
+  project_id UUID REFERENCES projects(id) ON DELETE CASCADE,
+  assignee_id UUID REFERENCES users(id) ON DELETE SET NULL,
+  creator_id UUID REFERENCES users(id) ON DELETE SET NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
